@@ -33,3 +33,5 @@ sudo systemctl start trojan
 sudo systemctl enable trojan
 
 ```
+
+# Auto renew license
