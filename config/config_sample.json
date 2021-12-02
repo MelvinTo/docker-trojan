@@ -1,0 +1,15 @@
+{
+    "run_type": "server",
+    "local_addr": "0.0.0.0",
+    "local_port": 443,
+    "remote_addr": "nginx",
+    "remote_port": 80,
+    "password": [
+        "a_good_password"
+    ],
+    "ssl": {
+        "cert": "/root/server.crt",
+        "key": "/root/server.key",
+        "sni": "_my_domain_"
+    }
+}

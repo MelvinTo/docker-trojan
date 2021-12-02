@@ -1,0 +1,21 @@
+[Unit]
+Description=%i service with docker compose
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=5
+
+WorkingDirectory=__CUR_DIR__
+
+ExecStartPre=/usr/local/bin/docker-compose rm -fv
+
+# Compose up
+ExecStart=/bin/bash -c "/usr/local/bin/docker-compose pull; /usr/local/bin/docker-compose up"
+
+# Compose down, remove containers and volumes
+ExecStop=/usr/local/bin/docker-compose down -v
+
+[Install]
+WantedBy=multi-user.target

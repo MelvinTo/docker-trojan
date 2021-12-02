@@ -1,0 +1,18 @@
+version: "3"
+services:
+  trojan:
+    image: teddysun/trojan-go
+    restart: always
+    depends_on: ["nginx"]
+    volumes:
+      - ./config/config.json:/etc/trojan-go/config.json
+      - ./config/fullchain.pem:/root/server.crt
+      - ./config/privkey.pem:/root/server.key
+    ports:
+      - "443:443"
+    command: /usr/bin/trojan-go --config /etc/trojan-go/config.json
+  nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
