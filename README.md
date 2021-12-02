@@ -35,3 +35,11 @@ sudo systemctl enable trojan
 ```
 
 # Auto renew license
+```
+cp renew_cert_sample.sh renew_cert.sh
+
+# change __mydomain__ to the real domain in script renew_cert.sh
+
+# run this script periodically to renew
+./renew_cert.sh
+```
