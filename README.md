@@ -2,7 +2,7 @@
 * Docker (Ubuntu 20.04 as example)
   * https://docs.docker.com/engine/install/ubuntu/
 * Docker compose
-  * https://docs.docker.com/compose/install/
+  * `sudo apt install docker-compose`
 
 # Install Let's Encrypt
 ```
